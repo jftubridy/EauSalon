@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RestaurantCatalog.Models.Restaurant
+
+<h2>Restaurant Details</h2>
+<hr />
+<h3>@Html.DisplayFor(model => model.Name):</h3> 
+<ul>
+<li><b>RestaurantId:</b> @Html.DisplayFor(model => model.RestaurantId)</li>
+<li><b>Name:</b> @Html.DisplayFor(model => model.Name)</li>
+<li><b>Location:</b> @Html.DisplayFor(model => model.Location)</li>
+<li><b>Rating:</b> @Html.DisplayFor(model => model.Rating)</li>
+</ul>
+
+<p>@Html.ActionLink("Back to restaurants", "Index")</p>
+<p>@Html.ActionLink("Edit Restaurant", "Edit", new { id = Model.RestaurantId })</p>
+<p>@Html.ActionLink("Delete Restaurant", "Delete", new { id = Model.RestaurantId })</p>
