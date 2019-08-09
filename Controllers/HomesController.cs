@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace RestaurantCatalog.Controllers
+namespace ClientCatalog.Controllers
 {
     public class HomeController : Controller
     {

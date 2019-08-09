@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RestaurantCatalog.Models;
+using ClientCatalog.Models;
 
-namespace RestaurantCatalog
+namespace ClientCatalog
 {
     public class Startup
     {
@@ -25,7 +25,7 @@ namespace RestaurantCatalog
             services.AddMvc();
 
             services.AddEntityFrameworkMySql()
-              .AddDbContext<RestaurantCatalogContext>(options => options
+              .AddDbContext<ClientCatalogContext>(options => options
               .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
         }
 

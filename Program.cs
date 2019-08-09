@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace RestaurantCatalog
+namespace ClientCatalog
 {
     public class Program
     {

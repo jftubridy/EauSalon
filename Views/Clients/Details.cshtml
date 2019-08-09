@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ClientCatalog.Models.Client
+
+<h2>Client Details</h2>
+<hr />
+<h3>@Html.DisplayFor(model => model.Name):</h3> 
+<ul>
+<li><b>ClientId:</b> @Html.DisplayFor(model => model.ClientId)</li>
+<li><b>Name:</b> @Html.DisplayFor(model => model.Name)</li>
+<li><b>Location:</b> @Html.DisplayFor(model => model.Location)</li>
+<li><b>Rating:</b> @Html.DisplayFor(model => model.Rating)</li>
+</ul>
+
+<p>@Html.ActionLink("Back to clients", "Index")</p>
+<p>@Html.ActionLink("Edit Client", "Edit", new { id = Model.ClientId })</p>
+<p>@Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId })</p>
