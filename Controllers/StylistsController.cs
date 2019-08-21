@@ -43,14 +43,10 @@ namespace ClientCatalog.Controllers
         public ActionResult Details(int id)
         {
             Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-            ViewBag.thisStylistClients = _db.Clients.Where(Client => Client.StylistId == id);
+            ViewBag.thisStylistsClients = _db.Clients.Where(Client => Client.StylistId == id);
             return View(thisStylist);
 
-            //  var thisStylist = _db.Stylists
-            //     .Include(stylist => stylist.Clients)
-            //     .ThenInclude(join => join.Client)
-            //     .FirstOrDefault(stylist => stylist.StylistId == id);
-            // return View(thisStylist);
+    
         }
 
 

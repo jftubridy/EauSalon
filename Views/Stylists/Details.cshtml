@@ -12,6 +12,9 @@
 <ul>
 
 
+@*    @Html.LabelFor(model => model.StylistId)
+@Html.DropDownList("StylistId")   *@
+
 @foreach (var client in ViewBag.thisStylistsClients)
 {
   <li>: @client.Name</li>

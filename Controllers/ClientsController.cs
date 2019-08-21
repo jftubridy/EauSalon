@@ -19,6 +19,7 @@ namespace ClientCatalog.Controllers
         public ActionResult Index()
         {
             List<Client> model = _db.Clients.Include(clients => clients.Stylist).ToList();
+            ViewBag.StylistName = _db.Stylists;
             return View(model);
 
         }
