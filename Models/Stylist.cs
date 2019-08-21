@@ -11,6 +11,7 @@ namespace ClientCatalog.Models
         public int StylistId { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
+        public string Rating { get; set; }
         public virtual ICollection<Client> Clients { get; set; }
     }
 }
