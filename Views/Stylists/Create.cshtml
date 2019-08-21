@@ -9,6 +9,15 @@
 {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone)
+
     <input type="submit" value="Add new stylist" />
 }
 <p>@Html.ActionLink("Show all stylists", "Index")</p>
+
+        <!-- public int StylistId { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Rating { get; set; }
+        public virtual ICollection<Client> Clients { get; set; } -->

@@ -3,6 +3,7 @@ using ClientCatalog.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ClientCatalog.Controllers
 {
@@ -18,10 +19,14 @@ namespace ClientCatalog.Controllers
         public ActionResult Index()
         {
             List<Stylist> model = _db.Stylists.ToList();
+            ViewBag.ClientName = _db.Clients;
             return View(model);
-
+            // This didn't seem to work
+            // List<Stylist> model = _db.Stylists.Include(stylists => StylistsController.clients).ToList();
+            // return View(model);
         }
 
+        //hopefully make a viewbag to fix my clients not showing up
         public ActionResult Create()
         {
             return View();
@@ -38,8 +43,16 @@ namespace ClientCatalog.Controllers
         public ActionResult Details(int id)
         {
             Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+            ViewBag.thisStylistClients = _db.Clients.Where(Client => Client.StylistId == id);
             return View(thisStylist);
+
+            //  var thisStylist = _db.Stylists
+            //     .Include(stylist => stylist.Clients)
+            //     .ThenInclude(join => join.Client)
+            //     .FirstOrDefault(stylist => stylist.StylistId == id);
+            // return View(thisStylist);
         }
+
 
         public ActionResult Edit(int id)
         {
